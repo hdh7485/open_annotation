@@ -7,10 +7,13 @@
 
 ## Installation 설치
 - OpenCV
+
 `$ pip3 install opencv-pythoni`
 - Git clone
+
 `$ git clone https://github.com/hdh7485/open_annotation.git`
 
 ## Run 실행
 `$ cd open_annotation`
+
 `$ python3 run.py`
