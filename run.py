@@ -1,15 +1,18 @@
 import cv2
 import numpy as np
 import math
+import os
 
 refPt = []
 candidateContours = []
 candidateRectangles = []
 
-rawImage = cv2.imread("narrow_path_1.jpg")
-blurImage = cv2.bilateralFilter(rawImage, 3, 75, 75)
+rawImage = cv2.imread("narrow_path_594.jpg")
+#blurImage = cv2.bilateralFilter(rawImage, 3, 75, 75)
+#blurImage = cv2.bilateralFilter(rawImage, 3, 10, 10)
+blurImage = rawImage.copy()
 grayImage = cv2.cvtColor(blurImage, cv2.COLOR_BGR2GRAY)
-cannyImage = cv2.Canny(grayImage, 150, 250, 3)
+cannyImage = cv2.Canny(grayImage, 50, 250, 3)
 
 image, contours, hierachy = cv2.findContours(cannyImage, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 contourImage = cv2.drawContours(rawImage, contours, -1, (255,255,255), 1)
